@@ -1,10 +1,9 @@
-pragma solidity 0.4.8;
-
+pragma solidity ^0.4.8;
 
 
 contract SzechuanToken{
-
-	adress public minter;
+    
+	address public minter;
 	uint public totalCoins;
 
 	event LogCoinsMinted(address deliveredTo, uint amount);
@@ -37,7 +36,7 @@ contract SzechuanToken{
 
 	function killCoin() returns (bool status){
 		if (msg.sender != minter) throw;
-		selfdestruct(miinter);
+		selfdestruct(minter);
 		
 	}
 }
